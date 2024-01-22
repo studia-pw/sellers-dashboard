@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import {useTranslation} from "react-i18next";
 
 export default function ThemeSwitchButton() {
+  const { t } = useTranslation();
+
   const [theme, setTheme] = useState("light");
   console.log(theme);
   return (
@@ -14,7 +17,7 @@ export default function ThemeSwitchButton() {
           setTheme("light");
         }}
       >
-        <p>Jasny</p>
+        <p>{t("theme.light")}</p>
       </button>
       <button
         className={
@@ -24,7 +27,7 @@ export default function ThemeSwitchButton() {
           setTheme("dark");
         }}
       >
-        <p>Ciemny</p>
+        <p>{t("theme.dark")}</p>
       </button>
     </div>
   );

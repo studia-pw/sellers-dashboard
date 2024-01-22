@@ -1,5 +1,13 @@
 import SideMenuButton from "@/app/components/side-menu-button";
+import {useTranslation} from "react-i18next";
 
 export default function DashboardPage() {
-    return (<><h1>Dashboard</h1><SideMenuButton /></>);
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <h1>{t("dashboard")}</h1>
+      <SideMenuButton />
+    </>
+  );
 }
