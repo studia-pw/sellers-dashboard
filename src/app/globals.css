@@ -10,24 +10,38 @@
     --background-end-rgb: 255, 255, 255;
 }
 
-h1 {
-    @apply text-[32px] font-normal font-lexend
+@layer base {
+    h1 {
+        @apply text-[32px] font-normal font-lexend
+    }
+
+    h2 {
+        @apply text-[20px] font-normal font-lexend
+    }
+
+    h3 {
+        @apply text-[18px] font-normal font-lexend
+    }
+
+    p {
+        @apply text-xs font-normal font-lexend
+    }
 }
 
-h2 {
-    @apply text-[20px] font-normal font-lexend
+@layer components {
+    .card {
+        @apply bg-white rounded-[10px] shadow-xl p-5
+    }
 }
 
-.rating-text {
-    @apply text-xs font-black font-lexend
-}
+@layer utilities {
+    .rating-text {
+        @apply text-xs font-black font-lexend
+    }
 
-p {
-    @apply text-xs font-normal font-lexend
-}
-
-.sub-text {
-    @apply text-[8px] font-normal font-lexend
+    .sub-text {
+        @apply text-[8px] font-normal font-lexend
+    }
 }
 
 /*@media (prefers-color-scheme: dark) {*/

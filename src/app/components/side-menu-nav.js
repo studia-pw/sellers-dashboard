@@ -29,19 +29,20 @@ export default function SideMenuNav() {
       label: "Porady sprzedażowe",
     },
   ];
-  const language = useSelector((state) => {
-    return state.languageState.usedLanguage;
-  });
 
-  const dispatch = useDispatch();
-  const onButton = () => {
-    dispatch(changeLanguage('new language'));
-  };
+    const language = useSelector((state) => {
+        return state.languageState.usedLanguage;
+    });
+
+    const dispatch = useDispatch();
+    const onButton = () => {
+        dispatch(changeLanguage('new language'));
+    };
 
   return (
     <div className="flex flex-col items-start">
-      <button onClick={onButton}>{language}</button>
-      <div className="flex flex-row gap-x-4 items-center pb-10">
+        <button onClick={onButton}>{language}</button>
+        <div className="flex flex-row gap-x-4 items-center pb-10">
         <img src="assets/navbar/logo.svg" className="w-[40px] h-[40px]" />
         <h1>Dashboard</h1>
       </div>
