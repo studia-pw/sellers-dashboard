@@ -6,6 +6,7 @@ import ThemeSwitchButton from "@/app/components/theme-switch-button";
 import { Provider } from "react-redux";
 import { store } from "@/app/lib/store";
 import OfferWidget from "@/app/dashboard/components/offer/offer-widget";
+import ReviewItem from "@/app/dashboard/components/review/review-item";
 
 export default function Home() {
   let items = [
@@ -39,6 +40,7 @@ export default function Home() {
           ))}
         </div>
         <OfferWidget />
+        <ReviewItem />
       </main>
     </Provider>
   );

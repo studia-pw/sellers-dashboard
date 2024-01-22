@@ -1,3 +1,7 @@
+function QualityScore({ score, max }) {
+  return <div>QualityScore</div>;
+}
+
 export default function QualityWidgetItem() {
-    return (<div>QualityWidgetItem</div>);
+  return <div className="card">QualityWidgetItem</div>;
 }

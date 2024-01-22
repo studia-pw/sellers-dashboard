@@ -15,7 +15,7 @@ function OfferItemSales() {
     <div className="flex flex-row justify-between gap-x-6">
       <div className="flex flex-col items-start text-[#444444]">
         <p>Sprzedano:</p>
-        <p>Sprzedano:</p>
+        <p>Obrót:</p>
       </div>
       <div className="flex flex-col items-end text-[#444444]">
         <p>3 sztuki</p>
