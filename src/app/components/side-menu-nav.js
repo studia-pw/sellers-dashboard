@@ -39,7 +39,7 @@ export default function SideMenuNav() {
 
   const dispatch = useDispatch();
   const onButton = () => {
-    dispatch(changeLanguage("new language"));
+    dispatch(changeLanguage("new flags"));
   };
 
   return (
