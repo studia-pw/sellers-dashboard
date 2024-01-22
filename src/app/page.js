@@ -1,6 +1,10 @@
+"use client";
+
 import OrderWidgetItem from "@/app/dashboard/components/order/order-widget-item";
 import SideMenuNav from "@/app/components/side-menu-nav";
 import ThemeSwitchButton from "@/app/components/theme-switch-button";
+import { Provider } from "react-redux";
+import { store } from "@/app/lib/store";
 
 export default function Home() {
   let items = [
@@ -24,14 +28,16 @@ export default function Home() {
     },
   ];
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <SideMenuNav />
-      <ThemeSwitchButton />
-      <div className="flex flex-row gap-x-4">
-        {items.map((item) => (
-          <OrderWidgetItem {...item} />
-        ))}
-      </div>
-    </main>
+    <Provider store={store}>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <SideMenuNav />
+        <ThemeSwitchButton />
+        <div className="flex flex-row gap-x-4">
+          {items.map((item) => (
+            <OrderWidgetItem {...item} />
+          ))}
+        </div>
+      </main>
+    </Provider>
   );
 }
