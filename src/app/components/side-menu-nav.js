@@ -1,12 +1,15 @@
 import SideMenuButton from "@/app/components/side-menu-button";
-import {useDispatch, useSelector} from "react-redux";
-import {changeLanguage} from "@/app/lib/store";
+import { useDispatch, useSelector } from "react-redux";
+import { changeLanguage } from "@/app/lib/store";
+import { useTranslation } from "react-i18next";
 
 export default function SideMenuNav() {
+  const { t } = useTranslation();
+
   let menuItems = [
     {
       icon: "assets/navbar/research.png",
-      label: "Przegląd",
+      label: t('overview'),
     },
     {
       icon: "assets/navbar/order.png",
@@ -30,19 +33,19 @@ export default function SideMenuNav() {
     },
   ];
 
-    const language = useSelector((state) => {
-        return state.languageState.usedLanguage;
-    });
+  const language = useSelector((state) => {
+    return state.languageState.usedLanguage;
+  });
 
-    const dispatch = useDispatch();
-    const onButton = () => {
-        dispatch(changeLanguage('new language'));
-    };
+  const dispatch = useDispatch();
+  const onButton = () => {
+    dispatch(changeLanguage("new language"));
+  };
 
   return (
     <div className="flex flex-col items-start">
-        <button onClick={onButton}>{language}</button>
-        <div className="flex flex-row gap-x-4 items-center pb-10">
+      <button onClick={onButton}>{language}</button>
+      <div className="flex flex-row gap-x-4 items-center pb-10">
         <img src="assets/navbar/logo.svg" className="w-[40px] h-[40px]" />
         <h1>Dashboard</h1>
       </div>

@@ -5,6 +5,8 @@ import SideMenuNav from "@/app/components/side-menu-nav";
 import ThemeSwitchButton from "@/app/components/theme-switch-button";
 import { Provider } from "react-redux";
 import { store } from "@/app/lib/store";
+import "./i18n";
+import LanguageSwitchButton from "@/app/components/language-switch-button";
 
 export default function Home() {
   let items = [
@@ -31,6 +33,7 @@ export default function Home() {
     <Provider store={store}>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <SideMenuNav />
+        <LanguageSwitchButton />
         <ThemeSwitchButton />
         <div className="flex flex-row gap-x-4">
           {items.map((item) => (
