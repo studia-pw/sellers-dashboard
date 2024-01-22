@@ -9,27 +9,27 @@ export default function SideMenuNav() {
   let menuItems = [
     {
       icon: "assets/navbar/research.png",
-      label: t('overview'),
+      label: t("sideMenu.overview"),
     },
     {
       icon: "assets/navbar/order.png",
-      label: "Zamówienia",
+      label: t("sideMenu.orders"),
     },
     {
       icon: "assets/navbar/quality.png",
-      label: "Jakość sprzedaży",
+      label: t("sideMenu.salesQuality"),
     },
     {
       icon: "assets/navbar/reviews.png",
-      label: "Opinie kupujących",
+      label: t("sideMenu.sellersReviews"),
     },
     {
       icon: "assets/navbar/ranking.png",
-      label: "Ranking ofert",
+      label: t("sideMenu.offerRanking"),
     },
     {
       icon: "assets/navbar/tips.png",
-      label: "Porady sprzedażowe",
+      label: t("sideMenu.salesTips"),
     },
   ];
 
@@ -47,7 +47,7 @@ export default function SideMenuNav() {
       <button onClick={onButton}>{language}</button>
       <div className="flex flex-row gap-x-4 items-center pb-10">
         <img src="assets/navbar/logo.svg" className="w-[40px] h-[40px]" />
-        <h1>Dashboard</h1>
+        <h1>{t("dashboard")}</h1>
       </div>
 
       <div className="flex flex-col gap-y-6">

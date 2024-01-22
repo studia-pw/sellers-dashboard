@@ -18,7 +18,7 @@ export const { changeColorScheme } = colorSchemeSlice.actions;
 const languageSlice = createSlice({
   name: "language",
   initialState: {
-    usedLanguage: Languages.POLISH,
+    usedLanguage: Languages.ENGLISH,
   },
   reducers: {
     changeLanguage: (state, action) => {

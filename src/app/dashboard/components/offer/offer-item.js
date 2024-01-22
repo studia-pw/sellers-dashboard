@@ -1,24 +1,30 @@
+import {useTranslation} from "react-i18next";
+
 function OfferItemDetails() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-row items-center gap-x-2.5 text-[#444444]">
       <p>1.</p>
       <div className="w-8 h-8">
         <img src="assets/iphone.jpeg" />
       </div>
-      <p>Telefon 8/128, 3000 PLN</p>
+      <p>{t("offer.name")}, 3000 PLN</p>
     </div>
   );
 }
 
 function OfferItemSales() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-row justify-between gap-x-6">
       <div className="flex flex-col items-start text-[#444444]">
-        <p>Sprzedano:</p>
-        <p>Obrót:</p>
+        <p>{t("offer.sold")}:</p>
+        <p>{t("offer.turnover")}:</p>
       </div>
       <div className="flex flex-col items-end text-[#444444]">
-        <p>3 sztuki</p>
+        <p>{t("offer.pieces", {count: 3})}</p>
         <p>9000 PLN</p>
       </div>
     </div>

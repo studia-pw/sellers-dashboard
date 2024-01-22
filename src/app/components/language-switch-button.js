@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Icon } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { changeLanguage } from "@/app/lib/store";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -52,12 +54,20 @@ const StyledMenu = styled((props) => (
 export default function LanguageSwitchButton() {
   const supportedLanguages = {
     en: { nativeName: "English", flagIcon: "assets/flags/american_flag.png" },
-    pl: { nativeName: "Polish", flagIcon: "assets/flags/polish_flag.png" },
+    pl: { nativeName: "Polski", flagIcon: "assets/flags/polish_flag.png" },
   };
 
+  const language = useSelector((state) => {
+    return state.languageState.usedLanguage;
+  });
+
   const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
   const changeLanguageAndCloseMenu = (language) => {
-    i18n.changeLanguage(language).then(() => {handleClose()});
+    i18n.changeLanguage(language).then(() => {
+      dispatch(changeLanguage(language));
+      handleClose();
+    });
   };
 
   const [anchorEl, setAnchorEl] = React.useState(null);

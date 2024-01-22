@@ -9,26 +9,30 @@ import "./i18n";
 import LanguageSwitchButton from "@/app/components/language-switch-button";
 import OfferWidget from "@/app/dashboard/components/offer/offer-widget";
 import ReviewItem from "@/app/dashboard/components/review/review-item";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+  const myNumber = 5;
+
   let items = [
     {
       icon: "assets/cards/unpaid.png",
-      label: "Zamówienia nieopłacone",
+      label: t("orders.unpaidOrders"),
       percentage: "67%",
-      text: "33 z 55 zamówień",
+      text: t("orders.numberSummary", { count: 33, total: 55 }),
     },
     {
       icon: "assets/cards/sent.png",
-      label: "Zamówienia niewysłane",
+      label: t("orders.notSentOrders"),
       percentage: "20%",
-      text: "10 z 50 zamówień",
+      text: t("orders.numberSummary", { count: 10, total: 50 }),
     },
     {
       icon: "assets/cards/returned.png",
-      label: "Zamówienia zwrócone",
+      label: t("orders.refundedOrders"),
       percentage: "6%",
-      text: "3 z 50 zamówień",
+      text: t("orders.numberSummary", { count: 5, total: 50 }),
     },
   ];
   return (

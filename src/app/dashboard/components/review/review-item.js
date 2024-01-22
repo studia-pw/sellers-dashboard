@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 function ReviewItemProfilePicture() {
   return (
     <div className="rounded-full overflow-hidden w-8 h-8">
@@ -11,7 +13,12 @@ function ReviewItemName({ name }) {
 }
 
 function ReviewItemTime() {
-  return <p className="sub-text text-black leading-[8px]">3 minuty temu</p>;
+  const { t } = useTranslation();
+  return (
+    <p className="sub-text text-black leading-[8px]">
+      {t("review.minutesAgo", { count: 3 })}
+    </p>
+  );
 }
 
 function ReviewItemComment({ comment }) {
@@ -19,17 +26,21 @@ function ReviewItemComment({ comment }) {
 }
 
 function ReviewItemStars() {
-  return <p className="sub-text leading-[8px]">5 stars</p>;
+  const { t } = useTranslation();
+  return (
+    <p className="sub-text leading-[8px]">{t("review.stars", { count: 5 })}</p>
+  );
 }
 
 export default function ReviewItem() {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-row gap-x-4 items-center">
       <ReviewItemProfilePicture />
       <div className="flex flex-col">
-        <ReviewItemName name="Imię Nazwisko" />
+        <ReviewItemName name={t("review.name") + " " + t("review.surname")} />
         <ReviewItemTime />
-        <ReviewItemComment comment="Dsklfjaskdfj adskfjadskjfaskl djfkladsjfkadsjfadskljfkladsjf kldasjf klasdjf akldsfja" />
+        <ReviewItemComment comment={t("review.comment")} />
         <ReviewItemStars />
       </div>
     </div>
