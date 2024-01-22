@@ -10,8 +10,8 @@ function ReviewItemName({ name }) {
   return <p className="text-[#9381FF]">{name}</p>;
 }
 
-function ReviewItemTime() {
-  return <p className="sub-text text-black leading-[8px]">3 minuty temu</p>;
+function ReviewItemTime({ time }) {
+  return <p className="sub-text text-black leading-[8px]">{time}</p>;
 }
 
 function ReviewItemComment({ comment }) {
@@ -22,14 +22,14 @@ function ReviewItemStars() {
   return <p className="sub-text leading-[8px]">5 stars</p>;
 }
 
-export default function ReviewItem() {
+export default function ReviewItem({ review }) {
   return (
-    <div className="flex flex-row gap-x-4 items-center">
+    <div className="flex flex-row gap-x-4 items-center rounded-[10px] bg-white hover:bg-[#F5F5F5] px-2.5">
       <ReviewItemProfilePicture />
       <div className="flex flex-col">
-        <ReviewItemName name="Imię Nazwisko" />
-        <ReviewItemTime />
-        <ReviewItemComment comment="Dsklfjaskdfj adskfjadskjfaskl djfkladsjfkadsjfadskljfkladsjf kldasjf klasdjf akldsfja" />
+        <ReviewItemName name={review.name} />
+        <ReviewItemTime time={review.time} />
+        <ReviewItemComment comment={review.comment} />
         <ReviewItemStars />
       </div>
     </div>
