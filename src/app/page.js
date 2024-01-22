@@ -5,6 +5,8 @@ import SideMenuNav from "@/app/components/side-menu-nav";
 import ThemeSwitchButton from "@/app/components/theme-switch-button";
 import { Provider } from "react-redux";
 import { store } from "@/app/lib/store";
+import OfferWidget from "@/app/dashboard/components/offer/offer-widget";
+import ReviewItem from "@/app/dashboard/components/review/review-item";
 
 export default function Home() {
   let items = [
@@ -29,7 +31,7 @@ export default function Home() {
   ];
   return (
     <Provider store={store}>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-y-5">
         <SideMenuNav />
         <ThemeSwitchButton />
         <div className="flex flex-row gap-x-4">
@@ -37,6 +39,8 @@ export default function Home() {
             <OrderWidgetItem {...item} />
           ))}
         </div>
+        <OfferWidget />
+        <ReviewItem />
       </main>
     </Provider>
   );
