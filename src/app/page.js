@@ -8,8 +8,11 @@ import { store } from "@/app/lib/store";
 import "./i18n";
 import LanguageSwitchButton from "@/app/components/language-switch-button";
 import OfferWidget from "@/app/dashboard/components/offer/offer-widget";
+import ReviewWidget from "@/app/dashboard/components/review/review-widget";
+import QualityWidgetItem from "@/app/dashboard/components/quality/quality-widget-item";
 import ReviewItem from "@/app/dashboard/components/review/review-item";
 import { useTranslation } from "react-i18next";
+
 
 export default function Home() {
   const { t } = useTranslation();
@@ -35,6 +38,44 @@ export default function Home() {
       text: t("orders.numberSummary", { count: 5, total: 50 }),
     },
   ];
+
+  let reviews = [
+    {
+      name: "Anna Kowalska",
+      time: "2 godziny temu",
+      comment: "Fantastyczny produkt! Bardzo zadowolona z zakupu. Polecam!",
+      stars: "5",
+    },
+    {
+      name: "Jan Nowak",
+      time: "1 dzień temu",
+      comment:
+        "Obsługa klienta na najwyższym poziomie. Szybka dostawa i świetna jakość.",
+      stars: "4",
+    },
+    {
+      name: "Ewa Malinowska",
+      time: "5 minut temu",
+      comment:
+        "Bardzo dobra cena w porównaniu do konkurencji. Produkt zgodny z opisem.",
+      stars: "5",
+    },
+    {
+      name: "Piotr Wojcik",
+      time: "10 godzin temu",
+      comment:
+        "Trochę długi czas dostawy, ale warto było czekać. Doskonała jakość.",
+      stars: "4",
+    },
+    {
+      name: "Magdalena Zielińska",
+      time: "30 minut temu",
+      comment:
+        "Świetna obsługa klienta, szybka reakcja na pytania. Produkt zgodny z oczekiwaniami.",
+      stars: "5",
+    },
+  ];
+
   return (
     <Provider store={store}>
       <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-y-5">
@@ -47,7 +88,8 @@ export default function Home() {
           ))}
         </div>
         <OfferWidget />
-        <ReviewItem />
+        <ReviewWidget reviews={reviews} />
+        <QualityWidgetItem />
       </main>
     </Provider>
   );
