@@ -39,6 +39,17 @@ i18next.use(initReactI18next).init({
           notSentOrders: "Not sent orders",
           refundedOrders: "Refunded orders",
           numberSummary: "{{count}} out of {{total}}",
+        },
+        salesGraph: {
+          days: {
+            monday: "Monday",
+            tuesday: "Tuesday",
+            wednesday: "Wednesday",
+            thursday: "Thursday",
+            friday: "Friday",
+            saturday: "Saturday",
+            sunday: "Sunday",
+          }
         }
       },
     },
@@ -77,6 +88,17 @@ i18next.use(initReactI18next).init({
           notSentOrders: "Zamówienia niewysłane",
           refundedOrders: "Zamówienia zwrócone",
           numberSummary: "{{count}} z {{total}}",
+        },
+        salesGraph: {
+          days: {
+            monday: "Poniedziałek",
+            tuesday: "Wtorek",
+            wednesday: "Środa",
+            thursday: "Czwartek",
+            friday: "Piątek",
+            saturday: "Sobota",
+            sunday: "Niedziela",
+          }
         }
       }
     }
