@@ -50,8 +50,8 @@ export default function SideMenuNav() {
       </div>
 
       <div className="flex flex-col gap-y-6">
-        {menuItems.map((item) => (
-          <SideMenuButton {...item} />
+        {menuItems.map((item, counter) => (
+          <SideMenuButton key={counter} {...item} />
         ))}
       </div>
     </div>

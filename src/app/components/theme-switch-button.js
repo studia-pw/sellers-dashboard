@@ -1,11 +1,16 @@
 "use client";
-import React, { useState } from "react";
-import {useTranslation} from "react-i18next";
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { changeColorScheme } from "@/app/lib/store";
 
 export default function ThemeSwitchButton() {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => {
+    return state.colorSchemeState.usedColorScheme;
+  });
 
-  const [theme, setTheme] = useState("light");
   console.log(theme);
   return (
     <div className="flex flex-row bg-[#F5F5F5] rounded-[40px] px-2 py-2 gap-x-5">
@@ -14,7 +19,7 @@ export default function ThemeSwitchButton() {
           "rounded-[40px] px-5 py-px " + (theme === "light" ? "bg-white" : "")
         }
         onClick={() => {
-          setTheme("light");
+          dispatch(changeColorScheme("light"));
         }}
       >
         <p>{t("theme.light")}</p>
@@ -24,7 +29,7 @@ export default function ThemeSwitchButton() {
           "rounded-[40px] px-5 py-px " + (theme === "dark" ? "bg-white" : "")
         }
         onClick={() => {
-          setTheme("dark");
+          dispatch(changeColorScheme("dark"));
         }}
       >
         <p>{t("theme.dark")}</p>
