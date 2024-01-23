@@ -13,6 +13,7 @@ import QualityWidgetItem from "@/app/dashboard/components/quality/quality-widget
 import { useTranslation } from "react-i18next";
 import QualityWorstAspectsWidgetItem from "@/app/dashboard/components/quality/quality-worst-aspects-widget-item";
 import ProfilePreview from "@/app/components/profile-preview";
+import ChartWidget from "@/app/dashboard/components/graph/chart-widget";
 
 function TopBar() {
   return (
@@ -20,7 +21,7 @@ function TopBar() {
       <h3 className="col-span-12">Przegląd</h3>
       <div className="flex flex-row items-center gap-x-2.5">
         <LanguageSwitchButton />
-        <div className="w-px h-5 h-full bg-black"></div>
+        <div className="w-px h-5 bg-black"></div>
         <ProfilePreview />
       </div>
     </div>
@@ -102,6 +103,9 @@ export default function Home() {
             <TopBar />
 
             <div className="grid grid-cols-12 auto-rows-max gap-5 mt-9">
+              <div className="col-span-12">
+                <ChartWidget />
+              </div>
               {items.map((item, index) => (
                 <div key={index} className="col-span-4">
                   <OrderWidgetItem {...item} />
