@@ -12,7 +12,7 @@ import ReviewWidget from "@/app/dashboard/components/review/review-widget";
 import QualityWidgetItem from "@/app/dashboard/components/quality/quality-widget-item";
 import ReviewItem from "@/app/dashboard/components/review/review-item";
 import { useTranslation } from "react-i18next";
-import GraphWidget from "@/app/dashboard/components/graph/graph-widget";
+import ChartWidget from "@/app/dashboard/components/graph/chart-widget";
 
 
 export default function Home() {
@@ -83,7 +83,7 @@ export default function Home() {
         <SideMenuNav />
         <LanguageSwitchButton />
         <ThemeSwitchButton />
-        <GraphWidget />
+        <ChartWidget />
         <div className="flex flex-row gap-x-4">
           {items.map((item) => (
             <OrderWidgetItem {...item} />
