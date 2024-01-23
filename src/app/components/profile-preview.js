@@ -44,6 +44,7 @@ function ProfileMenu() {
                 alt="Talor Swift"
               ></Avatar>
             }
+            className="m-0"
           >
             <p className="text-black capitalize">Taylor Swift</p>
           </Button>
