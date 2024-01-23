@@ -10,10 +10,9 @@ import LanguageSwitchButton from "@/app/components/language-switch-button";
 import OfferWidget from "@/app/dashboard/components/offer/offer-widget";
 import ReviewWidget from "@/app/dashboard/components/review/review-widget";
 import QualityWidgetItem from "@/app/dashboard/components/quality/quality-widget-item";
-import ReviewItem from "@/app/dashboard/components/review/review-item";
 import { useTranslation } from "react-i18next";
 import ChartWidget from "@/app/dashboard/components/graph/chart-widget";
-
+import QualityWorstAspectsWidgetItem from "@/app/dashboard/components/quality/quality-worst-aspects-widget-item";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -92,6 +91,7 @@ export default function Home() {
         <OfferWidget />
         <ReviewWidget reviews={reviews} />
         <QualityWidgetItem />
+        <QualityWorstAspectsWidgetItem />
       </main>
     </Provider>
   );
