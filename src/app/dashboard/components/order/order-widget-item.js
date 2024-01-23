@@ -1,6 +1,6 @@
 export default function OrderWidgetItem({ icon, label, percentage, text }) {
   return (
-    <div className="card flex flex-row py-[47px] px-[40px] items-center gap-x-12 group">
+    <div className="card flex flex-row py-[47px] px-[40px] items-center gap-x-12 justify-between group">
       <div className="flex flex-col justify-between gap-y-[30px]">
         <h3>
           {label.split(" ").at(0)} <br /> {label.split(" ").at(1)}

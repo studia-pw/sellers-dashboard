@@ -1,4 +1,5 @@
 import QualityScoreAndLabel from "@/app/dashboard/components/quality/quality-score-label-item";
+import { useTranslation } from "react-i18next";
 
 function QualityWorstAspectsTitle({ title }) {
   return (
@@ -12,27 +13,28 @@ function QualityWorstAspectsTitle({ title }) {
 }
 
 export default function QualityWorstAspectsWidgetItem() {
+  const { t } = useTranslation();
   let worst = [
     {
-      name: "Czas realizacji zamówienia",
+      name: t("quality.aspects.shippingTime"),
       score: 66,
       max: 100,
     },
     {
-      name: "Komunikacja",
+      name: t("quality.aspects.communication"),
       score: 50,
       max: 100,
     },
     {
-      name: "Ilość zwrotów",
+      name: t("quality.aspects.returns"),
       score: 41,
       max: 100,
     },
   ];
   return (
-    <div className="card w-[650px]">
+    <div className="card">
       <div className="mb-3">
-        <QualityWorstAspectsTitle title="Najgorsze aspekty" />
+        <QualityWorstAspectsTitle title={t("quality.worstAspects")} />
       </div>
       <div className="border-2 border-[#F5F5F5] rounded-[10px] px-8 py-6 flex flex-row justify-between">
         {worst.map((aspect) => (

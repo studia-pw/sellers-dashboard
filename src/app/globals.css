@@ -30,7 +30,7 @@
 
 @layer components {
     .card {
-        @apply bg-white rounded-[10px] shadow-xl p-5
+        @apply bg-white rounded-[10px] shadow-xl p-5 overflow-hidden
     }
 }
 
