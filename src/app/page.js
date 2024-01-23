@@ -79,7 +79,7 @@ export default function Home() {
     <Provider store={store}>
       <main>
         <div className="flex flex-row">
-          <div className="flex flex-col shrink-0 w-[300px] items-center justify-between border-r-2">
+          <div className="flex flex-col shrink-0 min-w-[300px] items-center justify-between border-r-2 p-5">
             <SideMenuNav />
             <ThemeSwitchButton />
           </div>

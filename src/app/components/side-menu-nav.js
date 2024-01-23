@@ -44,7 +44,6 @@ export default function SideMenuNav() {
 
   return (
     <div className="flex flex-col items-start">
-      <button onClick={onButton}>{language}</button>
       <div className="flex flex-row gap-x-4 items-center pb-10">
         <img src="assets/navbar/logo.svg" className="w-[40px] h-[40px]" />
         <h1>{t("dashboard")}</h1>
