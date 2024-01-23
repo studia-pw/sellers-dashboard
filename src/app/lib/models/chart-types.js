@@ -1,4 +1,10 @@
 export const ChartTypes = {
-  BAR: "Bar",
-  LINE: "Line",
+  BAR: {
+    id: "Bar",
+    translationKey: "salesChart.types.bar",
+  },
+  LINE: {
+    id: "Line",
+    translationKey: "salesChart.types.line",
+  },
 };

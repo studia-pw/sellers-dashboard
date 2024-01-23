@@ -58,8 +58,12 @@ i18next.use(initReactI18next).init({
           timeRanges: {
             day: "Day",
             week: "Week",
-            lastWeek: "Last week"
+            previousWeek: "Previous week"
           },
+          types: {
+            line: "Line",
+            bar: "Bar",
+          }
         },
       },
     },
@@ -117,8 +121,12 @@ i18next.use(initReactI18next).init({
           timeRanges: {
             day: "Dzień",
             week: "Tydzień",
-            lastWeek: "Ubiegły tydzień"
+            previousWeek: "Ubiegły tydzień"
           },
+          types: {
+            line: "Liniowy",
+            bar: "Słupkowy",
+          }
         }
       }
     }
