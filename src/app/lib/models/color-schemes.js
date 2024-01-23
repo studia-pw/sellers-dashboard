@@ -1,4 +1,4 @@
 export const ColorSchemes = {
-  LIGHT: "Light",
-  DARK: "Dark",
+  LIGHT: "light",
+  DARK: "dark",
 };

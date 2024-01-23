@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import { LineChart } from "@mui/x-charts/LineChart";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,8 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { StyledMenu } from "@/app/components/styled-menu";
 import { MeasurementsPresentedOnChart } from "@/app/models/sales-chart/measurements-presented-on-chart";
 import { ChartTimeRanges } from "@/app/models/sales-chart/chart-time-ranges";
-import {changeChartType, changeSalesChart} from "@/app/lib/store";
-import { useEffect, useState } from "react";
+import { changeChartType, changeSalesChart } from "@/app/lib/store";
 import { ChartTypes } from "@/app/lib/models/chart-types";
 import { BarChart } from "@mui/x-charts";
 
@@ -151,8 +151,6 @@ export default function ChartWidget() {
     setAnchorElChartType(null);
   };
 
-
-
   return (
     <div className="card">
       <div className="flex flex-row flex items-center gap-[20px]">
@@ -164,7 +162,7 @@ export default function ChartWidget() {
         {Object.keys(ChartTimeRanges).map((timeRangeName) => (
           <React.Fragment>
             <button
-              key={"chartTimeRange" + ChartTimeRanges[timeRangeName].id}
+              key={timeRangeName}
               onClick={() => changeTimeRange(ChartTimeRanges[timeRangeName])}
               className="text-black text-[12px] font-normal font-lexend"
             >
@@ -178,7 +176,9 @@ export default function ChartWidget() {
           <Button
             className="rounded-full bg-[#F5F5F5] px-[10px] py-[9px] text-black text-[12px] font-normal font-lexend"
             id="measurement-switch-button"
-            aria-controls={openMeasurement ? "measurement-switch-menu" : undefined}
+            aria-controls={
+              openMeasurement ? "measurement-switch-menu" : undefined
+            }
             aria-haspopup="true"
             aria-expanded={openMeasurement ? "true" : undefined}
             variant="contained"
@@ -258,9 +258,7 @@ export default function ChartWidget() {
                 type="submit"
                 key={chartTypeName}
                 onClick={() =>
-                  changeChartTypeAndCloseMenu(
-                    ChartTypes[chartTypeName],
-                  )
+                  changeChartTypeAndCloseMenu(ChartTypes[chartTypeName])
                 }
                 disabled={
                   salesChartState.chartType.id === ChartTypes[chartTypeName].id
@@ -287,9 +285,7 @@ export default function ChartWidget() {
       )}
       {salesChartState.chartType === ChartTypes.BAR && (
         <BarChart
-          series={[
-            { data: salesChart.dataForCurrentPeriod.data },
-          ]}
+          series={[{ data: salesChart.dataForCurrentPeriod.data }]}
           yAxis={[{ min: 0 }]}
           xAxis={[{ scaleType: "band", data: xLabels }]}
           width={1060}
