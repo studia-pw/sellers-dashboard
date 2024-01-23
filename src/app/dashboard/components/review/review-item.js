@@ -19,7 +19,6 @@ function ReviewItemTime() {
       {t("review.minutesAgo", { count: 3 })}
     </p>
   );
-
 }
 
 function ReviewItemComment({ comment }) {
@@ -33,11 +32,10 @@ function ReviewItemStars() {
   );
 }
 
-
 export default function ReviewItem() {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-row gap-x-4 items-center rounded-[10px] bg-white hover:bg-[#F5F5F5] px-2.5">
+    <div className="flex flex-row gap-x-4 items-center rounded-[10px] bg-white hover:bg-[#F5F5F5] px-2.5 py-1">
       <ReviewItemProfilePicture />
       <div className="flex flex-col">
         <ReviewItemName name={t("review.name") + " " + t("review.surname")} />

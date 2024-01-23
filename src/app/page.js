@@ -77,19 +77,35 @@ export default function Home() {
 
   return (
     <Provider store={store}>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-y-5">
-        <SideMenuNav />
-        <LanguageSwitchButton />
-        <ThemeSwitchButton />
-        <div className="flex flex-row gap-x-4">
-          {items.map((item) => (
-            <OrderWidgetItem {...item} />
-          ))}
+      <main>
+        <div className="flex flex-row">
+          <div className="flex flex-col shrink-0 w-[300px] items-center justify-between border-r-2">
+            <SideMenuNav />
+            <ThemeSwitchButton />
+          </div>
+
+          <div className="grid grid-cols-12 auto-rows-max gap-5 p-7 max-w-screen-xl w-full mx-auto">
+            {items.map((item, index) => (
+              <div key={index} className="col-span-4">
+                <OrderWidgetItem {...item} />
+              </div>
+            ))}
+
+            <div className="col-span-6">
+              <ReviewWidget reviews={reviews} />
+            </div>
+            <div className="col-span-6">
+              <OfferWidget />
+            </div>
+            <div className="col-span-4">
+              <QualityWidgetItem />
+            </div>
+            <div className="col-span-8">
+              <QualityWorstAspectsWidgetItem />
+            </div>
+          </div>
         </div>
-        <OfferWidget />
-        <ReviewWidget reviews={reviews} />
-        <QualityWidgetItem />
-        <QualityWorstAspectsWidgetItem />
+        <LanguageSwitchButton />
       </main>
     </Provider>
   );

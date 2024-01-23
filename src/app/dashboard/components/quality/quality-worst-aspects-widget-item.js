@@ -30,7 +30,7 @@ export default function QualityWorstAspectsWidgetItem() {
     },
   ];
   return (
-    <div className="card w-[650px]">
+    <div className="card">
       <div className="mb-3">
         <QualityWorstAspectsTitle title="Najgorsze aspekty" />
       </div>
