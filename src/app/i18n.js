@@ -29,7 +29,8 @@ i18next.use(initReactI18next).init({
         },
         review: {
           minutesAgo: "{{count}} minutes ago",
-          comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          comment:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
           stars: "{{count}} stars",
           name: "Name",
           surname: "Surname",
@@ -39,10 +40,20 @@ i18next.use(initReactI18next).init({
           notSentOrders: "Not sent orders",
           refundedOrders: "Refunded orders",
           numberSummary: "{{count}} out of {{total}}",
-        }
+        },
+        quality: {
+          qualityEvaluation: "Quality evaluation",
+          worstAspects: "Worst aspects",
+          aspects: {
+            shippingTime: "Shipping time",
+            communication: "Communication",
+            returns: "Number of returns",
+          },
+          sellersBadge: "Trusted seller",
+        },
       },
     },
-    pl : {
+    pl: {
       translation: {
         dashboard: "Panel główny",
         theme: {
@@ -67,7 +78,8 @@ i18next.use(initReactI18next).init({
         },
         review: {
           minutesAgo: "{{count}} minuty temu",
-          comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          comment:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
           stars: "{{count}} gwiazdki",
           name: "Imię",
           surname: "Nazwisko",
@@ -77,8 +89,18 @@ i18next.use(initReactI18next).init({
           notSentOrders: "Zamówienia niewysłane",
           refundedOrders: "Zamówienia zwrócone",
           numberSummary: "{{count}} z {{total}}",
-        }
-      }
-    }
+        },
+        quality: {
+          qualityEvaluation: "Ocena jakości",
+          worstAspects: "Najgorsze aspekty",
+          aspects: {
+            shippingTime: "Czas realizacji zamówienia",
+            communication: "Komunikacja",
+            returns: "Liczba zwrotów",
+          },
+          sellersBadge: "Zaufany sprzedawca",
+        },
+      },
+    },
   },
 });

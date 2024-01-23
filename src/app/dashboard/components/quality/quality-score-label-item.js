@@ -16,7 +16,7 @@ function QualityScore({ quality }) {
 export default function QualityScoreAndLabelItem({ quality, label }) {
   return (
     <div className="flex flex-row items-center gap-x-2.5 justify-center">
-      <p className="text-black text-right max-w-[80px]">{label}</p>
+      <p className="text-black text-right max-w-[90px]">{label}</p>
       <QualityScore quality={quality} />
     </div>
   );

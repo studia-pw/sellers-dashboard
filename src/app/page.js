@@ -12,6 +12,20 @@ import ReviewWidget from "@/app/dashboard/components/review/review-widget";
 import QualityWidgetItem from "@/app/dashboard/components/quality/quality-widget-item";
 import { useTranslation } from "react-i18next";
 import QualityWorstAspectsWidgetItem from "@/app/dashboard/components/quality/quality-worst-aspects-widget-item";
+import ProfilePreview from "@/app/components/profile-preview";
+
+function TopBar() {
+  return (
+    <div className="flex flex-row justify-between">
+      <h3 className="col-span-12">Przegląd</h3>
+      <div className="flex flex-row items-center gap-x-2.5">
+        <LanguageSwitchButton />
+        <div className="w-px h-5 h-full bg-black"></div>
+        <ProfilePreview />
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const { t } = useTranslation();
@@ -79,33 +93,36 @@ export default function Home() {
     <Provider store={store}>
       <main>
         <div className="flex flex-row">
-          <div className="flex flex-col shrink-0 min-w-[300px] items-center justify-between border-r-2 p-5">
+          <div className="flex flex-col shrink-0 min-w-[300px] items-center justify-between border-r-2 p-5 h-screen sticky top-0">
             <SideMenuNav />
             <ThemeSwitchButton />
           </div>
 
-          <div className="grid grid-cols-12 auto-rows-max gap-5 p-7 max-w-screen-xl w-full mx-auto">
-            {items.map((item, index) => (
-              <div key={index} className="col-span-4">
-                <OrderWidgetItem {...item} />
-              </div>
-            ))}
+          <div className="p-7 max-w-screen-xl w-full mx-auto">
+            <TopBar />
 
-            <div className="col-span-6">
-              <ReviewWidget reviews={reviews} />
-            </div>
-            <div className="col-span-6">
-              <OfferWidget />
-            </div>
-            <div className="col-span-4">
-              <QualityWidgetItem />
-            </div>
-            <div className="col-span-8">
-              <QualityWorstAspectsWidgetItem />
+            <div className="grid grid-cols-12 auto-rows-max gap-5 mt-9">
+              {items.map((item, index) => (
+                <div key={index} className="col-span-4">
+                  <OrderWidgetItem {...item} />
+                </div>
+              ))}
+
+              <div className="col-span-6">
+                <ReviewWidget reviews={reviews} />
+              </div>
+              <div className="col-span-6">
+                <OfferWidget />
+              </div>
+              <div className="col-span-4">
+                <QualityWidgetItem />
+              </div>
+              <div className="col-span-8">
+                <QualityWorstAspectsWidgetItem />
+              </div>
             </div>
           </div>
         </div>
-        <LanguageSwitchButton />
       </main>
     </Provider>
   );
