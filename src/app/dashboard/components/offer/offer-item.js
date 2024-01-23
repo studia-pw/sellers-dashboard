@@ -24,7 +24,7 @@ function OfferItemSales() {
         <p>{t("offer.turnover")}:</p>
       </div>
       <div className="flex flex-col items-end text-[#444444]">
-        <p>{t("offer.pieces", {count: 3})}</p>
+        <p>{t("offer.units", {count: 3})}</p>
         <p>9000 PLN</p>
       </div>
     </div>

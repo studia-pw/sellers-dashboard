@@ -1,6 +1,11 @@
 import { combineReducers, configureStore, createSlice } from "@reduxjs/toolkit";
 import { ColorSchemes } from "@/app/lib/models/color-schemes";
 import { Languages } from "@/app/lib/models/languages";
+import {SalesChart} from "@/app/models/sales-chart/sales-chart";
+import {PeriodDataForChart} from "@/app/models/sales-chart/period-data-for-chart";
+import {MeasurementsPresentedOnChart} from "@/app/models/sales-chart/measurements-presented-on-chart";
+import {ChartTimeRanges} from "@/app/models/sales-chart/chart-time-ranges";
+import {ChartTypes} from "@/app/lib/models/chart-types";
 
 const colorSchemeSlice = createSlice({
   name: "colorScheme",
@@ -92,9 +97,14 @@ export const { changeOfferSortCriteria, changeOffers, changeChosenOffer } =
 const salesChartSlice = createSlice({
   name: "salesChart",
   initialState: {
-    doShowAdditionalDataSeries: null,
-    chartType: null,
-    salesChart: null,
+    doShowAdditionalDataSeries: false,
+    chartType: ChartTypes.LINE,
+    salesChart: new SalesChart(
+      new PeriodDataForChart([10, 30, 10, 30, 60, 35, 30]),
+      new PeriodDataForChart([]),
+      MeasurementsPresentedOnChart.unitsSoldNumber,
+      ChartTimeRanges.week
+    ),
   },
   reducers: {
     changeShowAdditionalDataSeries: (state, action) => {

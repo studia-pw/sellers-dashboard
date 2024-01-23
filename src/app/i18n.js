@@ -23,7 +23,7 @@ i18next.use(initReactI18next).init({
           name: "Phone 8/128",
           sold: "Sold",
           turnover: "Turnover",
-          pieces: "{{count}} pieces",
+          units: "{{count}} units",
           bestSellers: "Best sellers",
           leastSellers: "Least sellers",
         },
@@ -39,7 +39,32 @@ i18next.use(initReactI18next).init({
           notSentOrders: "Not sent orders",
           refundedOrders: "Refunded orders",
           numberSummary: "{{count}} out of {{total}}",
-        }
+        },
+        salesChart: {
+          header: "Sales chart",
+          days: {
+            monday: "Monday",
+            tuesday: "Tuesday",
+            wednesday: "Wednesday",
+            thursday: "Thursday",
+            friday: "Friday",
+            saturday: "Saturday",
+            sunday: "Sunday",
+          },
+          measurements: {
+            unitsSoldNumber: "Number of units sold",
+            turnover: "Turnover",
+          },
+          timeRanges: {
+            day: "Day",
+            week: "Week",
+            previousWeek: "Previous week"
+          },
+          types: {
+            line: "Line",
+            bar: "Bar",
+          }
+        },
       },
     },
     pl : {
@@ -61,7 +86,7 @@ i18next.use(initReactI18next).init({
           name: "Telefon 8/128",
           sold: "Sprzedano",
           turnover: "Obrót",
-          pieces: "{{count}} sztuki",
+          units: "{{count}} sztuki",
           bestSellers: "Najczęściej sprzedawane",
           leastSellers: "Najrzadziej sprzedawane",
         },
@@ -77,6 +102,31 @@ i18next.use(initReactI18next).init({
           notSentOrders: "Zamówienia niewysłane",
           refundedOrders: "Zamówienia zwrócone",
           numberSummary: "{{count}} z {{total}}",
+        },
+        salesChart: {
+          header: "Wykres sprzedaży",
+          days: {
+            monday: "Poniedziałek",
+            tuesday: "Wtorek",
+            wednesday: "Środa",
+            thursday: "Czwartek",
+            friday: "Piątek",
+            saturday: "Sobota",
+            sunday: "Niedziela",
+          },
+          measurements: {
+            unitsSoldNumber: "Liczba sprzedanych sztuk",
+            turnover: "Obrót",
+          },
+          timeRanges: {
+            day: "Dzień",
+            week: "Tydzień",
+            previousWeek: "Ubiegły tydzień"
+          },
+          types: {
+            line: "Liniowy",
+            bar: "Słupkowy",
+          }
         }
       }
     }

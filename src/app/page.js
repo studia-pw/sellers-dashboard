@@ -11,6 +11,7 @@ import OfferWidget from "@/app/dashboard/components/offer/offer-widget";
 import ReviewWidget from "@/app/dashboard/components/review/review-widget";
 import QualityWidgetItem from "@/app/dashboard/components/quality/quality-widget-item";
 import { useTranslation } from "react-i18next";
+import ChartWidget from "@/app/dashboard/components/graph/chart-widget";
 import QualityWorstAspectsWidgetItem from "@/app/dashboard/components/quality/quality-worst-aspects-widget-item";
 
 export default function Home() {
@@ -81,6 +82,7 @@ export default function Home() {
         <SideMenuNav />
         <LanguageSwitchButton />
         <ThemeSwitchButton />
+        <ChartWidget />
         <div className="flex flex-row gap-x-4">
           {items.map((item) => (
             <OrderWidgetItem {...item} />
